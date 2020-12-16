@@ -1,0 +1,10 @@
+<resources>
+    <string-array name="volte_icon_names">
+        <item>不要替换</item>
+        <item>“HD” (14dp x 17dp)</item>
+        <item>包在正方形中的“HD” (14dp x 14dp)</item>
+        <item>斜体“VOLTE” (29dp x 11dp)</item>
+        <item>包在长方形中的“VOLTE” (30.4dp x 24dp)</item>
+        <item>包在正方形中的“VOLTE” (14dp x 14dp)</item>
+    </string-array>
+</resources>

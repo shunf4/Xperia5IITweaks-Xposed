@@ -1,0 +1,37 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="hint_text"
+        app:icon="@drawable/ic_baseline_warning_24"
+        app:title="@string/hint_disable_app_list" />
+
+    <EditTextPreference
+        app:iconSpaceReserved="false"
+        app:defaultValue="-1"
+        app:key="volte_width_dp"
+        app:title="@string/input_volte_width_title"
+        app:summary="@string/input_volte_width_description" />
+
+    <EditTextPreference
+        app:iconSpaceReserved="false"
+        app:defaultValue="-1"
+        app:key="volte_height_dp"
+        app:title="@string/input_volte_height_title"
+        app:summary="@string/input_volte_height_description" />
+
+    <EditTextPreference
+        app:iconSpaceReserved="false"
+        app:defaultValue="-1"
+        app:key="volte_margin_end_dp"
+        app:title="@string/input_volte_margin_end_title"
+        app:summary="@string/input_volte_margin_end_description" />
+
+    <ListPreference
+        app:defaultValue="-1"
+        app:entries="@array/volte_icon_names"
+        app:entryValues="@array/volte_icon_values"
+        app:key="volte_substitution_icon_index"
+        app:title="@string/input_volte_icon_title"
+        app:useSimpleSummaryProvider="true" />
+
+</PreferenceScreen>

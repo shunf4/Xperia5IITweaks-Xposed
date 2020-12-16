@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Xperia5 II Tweaks</string>
+    <string name="title_activity_settings">X5II Tweaks Settings</string>
+
+    <string name="hint_disable_app_list">Note: Disable App List mode in EdXposed Manager to use this module. Modified values take effect after a reboot.</string>
+    <string name="input_volte_width_title">Width of VoLTE icon (dp, 0~100)</string>
+    <string name="input_volte_width_description">Set as -2 to use original icon\'s width</string>
+    <string name="input_volte_height_title">Height of VoLTE icon (dp, 0~50)</string>
+    <string name="input_volte_height_description">Set as -2 to use original icon\'s height</string>
+    <string name="input_volte_margin_end_title">Ending margin of VoLTE icon (dp, 0~40)</string>
+    <string name="input_volte_margin_end_description">Setting this to -1 means using system default value.</string>
+    <string name="input_volte_icon_title">VoLTE icon</string>
+    <string name="hint_not_in_range">Unable to set: You must input a value in range.</string>
+
+</resources>

@@ -1,0 +1,19 @@
+<resources>
+    <string-array name="volte_icon_names">
+        <item>Do not replace</item>
+        <item>\"HD\" (14dp x 17dp)</item>
+        <item>\"HD\" wrapped in square (14dp x 14dp)</item>
+        <item>\"VOLTE\" italic (29dp x 11dp)</item>
+        <item>\"VOLTE\" wrapped in rectangle (30.4dp x 24dp)</item>
+        <item>\"VOLTE\" wrapped in square (14dp x 14dp)</item>
+    </string-array>
+
+    <string-array name="volte_icon_values">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+</resources>

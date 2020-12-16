@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">5马克兔微调</string>
+    <string name="title_activity_settings">5兔微调设置</string>
+
+    <string name="input_volte_width_title">VoLTE 图标的宽 (dp, 0~100)</string>
+    <string name="input_volte_width_description">设置为 -2 即使用原图标的宽</string>
+    <string name="input_volte_height_title">VoLTE 图标的高 (dp, 0~50)</string>
+    <string name="input_volte_height_description">设置为 -2 即使用原图标的高</string>
+    <string name="input_volte_margin_end_title">VoLTE 图标尾部边距 (dp, 0~40)</string>
+    <string name="input_volte_margin_end_description">设置为 -1 则表示使用系统默认值。</string>
+    <string name="input_volte_icon_title">VoLTE 图标</string>
+    <string name="hint_not_in_range">无法设置：你必须指定一个在范围内的值。</string>
+    <string name="hint_disable_app_list">注意：请先在 EdXposed Manager 中禁用“应用名单”模式。修改下面值后重启生效。</string>
+
+</resources>
