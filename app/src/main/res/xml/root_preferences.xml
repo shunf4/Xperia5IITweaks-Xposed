@@ -34,4 +34,17 @@
         app:title="@string/input_volte_icon_title"
         app:useSimpleSummaryProvider="true" />
 
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="hint_text"
+        app:icon="@drawable/ic_baseline_warning_24"
+        app:title="@string/hint_dangerous_nav_bar_tweak" />
+
+    <EditTextPreference
+        app:iconSpaceReserved="false"
+        app:defaultValue=""
+        app:key="nav_bar_layout_str"
+        app:title="@string/input_nav_bar_layout_str_title"
+        app:summary="@string/input_nav_bar_layout_str_description" />
+
 </PreferenceScreen>

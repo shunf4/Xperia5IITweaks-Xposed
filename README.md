@@ -7,6 +7,10 @@ Various tweaks for Xperia 5 II as an Xposed module
 #### Features 功能
 
 - Adjust originally oversized VoLTE icon 调整原来过大的 VoLTE 图标
+- Tweak Nav Bar button layout 调整导航栏按键布局
+    You need to understand layout string like this one: 你需要会配置类似这样的配置字符串：
+    `left[.5W],back[1WC];home;recent[1WC],right[.5W]`
+    See also [NavigationBarInflaterView.java](https://github.com/aosp-mirror/platform_frameworks_base/blob/c5d02da0f6553a00da6b0d833b67d3bbe87341e0/packages/SystemUI/src/com/android/systemui/statusbar/phone/NavigationBarInflaterView.java).
 
 #### Before Use 使用前须知
 

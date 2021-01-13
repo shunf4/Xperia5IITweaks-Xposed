@@ -56,6 +56,9 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
             int volteHeightDp = Integer.parseInt(prefs.getString("volte_height_dp", "-1"));
             int volteSubstitutionIconIndex =
                     Integer.parseInt(prefs.getString("volte_substitution_icon_index", "-1"));
+            String navBarLayout =
+                    prefs.getString("nav_bar_layout_str", "");
+            navBarLayout = navBarLayout.replaceAll("\\s", "");
 
             XposedBridge.log("volteMarginEnd: " + volteMarginEnd);
             XposedBridge.log("volteWidthDp: " + volteWidthDp);
@@ -123,6 +126,14 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
                     modRes.fwd(
                             VolteSubstitutionIcons.RESOURCES[volteSubstitutionIconIndex]
                     ));
+            }
+
+            if (!navBarLayout.equals("")) {
+                resparam.res.setReplacement(
+                        "com.android.systemui",
+                        "string",
+                        "config_navBarLayout",
+                        navBarLayout);
             }
         }
     }

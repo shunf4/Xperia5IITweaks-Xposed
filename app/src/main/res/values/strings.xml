@@ -11,5 +11,8 @@
     <string name="input_volte_margin_end_description">Setting this to -1 means using system default value.</string>
     <string name="input_volte_icon_title">VoLTE icon</string>
     <string name="hint_not_in_range">Unable to set: You must input a value in range.</string>
+    <string name="hint_dangerous_nav_bar_tweak">Warning: customizing Nav Bar layout string can be very dangerous. Make sure you understand what the string means and there is nothing wrong before modification!</string>
+    <string name="input_nav_bar_layout_str_title">Navigation bar layout string</string>
+    <string name="input_nav_bar_layout_str_description">Empty (or string with only whitespace characters) means no modification</string>
 
 </resources>
