@@ -11,6 +11,7 @@ Various tweaks for Xperia 5 II as an Xposed module
     You need to understand layout string like this one: 你需要会配置类似这样的配置字符串：  
     `left[.5W],back[1WC];home;recent[1WC],right[.5W]`  
     See also [NavigationBarInflaterView.java](https://github.com/aosp-mirror/platform_frameworks_base/blob/c5d02da0f6553a00da6b0d833b67d3bbe87341e0/packages/SystemUI/src/com/android/systemui/statusbar/phone/NavigationBarInflaterView.java).
+- Disable "tap twice to wake" on Always On Display (Ambient Display) 在锁屏始终显示（环境显示）界面上禁止双击唤醒
 
 #### Before Use 使用前须知
 
