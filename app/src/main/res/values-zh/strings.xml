@@ -14,5 +14,6 @@
     <string name="hint_dangerous_nav_bar_tweak" >注意：修改导航栏布局字符串是很危险的。一定要确认你明白字符串的意思，确保万无一失后再做修改！</string>
     <string name="input_nav_bar_layout_str_title">导航栏布局</string>
     <string name="input_nav_bar_layout_str_description">输入空字符串（或者只有空白字符的字符串）则表示不做修改</string>
+    <string name="input_double_tap_on_aod_to_wake">双击始终显示（环境显示）唤醒屏幕</string>
 
 </resources>

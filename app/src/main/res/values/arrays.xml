@@ -16,4 +16,16 @@
         <item>3</item>
         <item>4</item>
     </string-array>
+
+    <string-array name="on_off_not_changed">
+        <item>Off</item>
+        <item>On</item>
+        <item>Not changed</item>
+    </string-array>
+
+    <string-array name="on_off_not_changed_values">
+        <item>0</item>
+        <item>1</item>
+        <item>-1</item>
+    </string-array>
 </resources>

@@ -159,6 +159,25 @@ public class SettingsActivity extends AppCompatActivity {
                     getPreferenceManager().findPreference("volte_substitution_icon_index");
             iconPreference.callChangeListener(iconPreference.getValue());
 
+            getPreferenceManager().findPreference("double_tap_on_aod_to_wake")
+                    .setOnPreferenceChangeListener((preference, newValue) -> {
+                        String strNewValue = (String) newValue;
+                        try {
+                            int i = Integer.parseInt(strNewValue);
+                            if (i < -1 || i > 1) {
+                                throw new Exception();
+                            }
+                        } catch (Exception e) {
+                            Toast.makeText(
+                                    getContext(),
+                                    R.string.hint_not_in_range,
+                                    Toast.LENGTH_LONG
+                            ).show();
+                            return false;
+                        }
+                        return true;
+                    });
+
             return super.onCreateView(inflater, container, savedInstanceState);
         }
 

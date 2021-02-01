@@ -12,8 +12,10 @@ import java.io.File;
 import de.robv.android.xposed.IXposedHookInitPackageResources;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.IXposedHookZygoteInit;
+import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XSharedPreferences;
 import de.robv.android.xposed.XposedBridge;
+import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_InitPackageResources;
 import de.robv.android.xposed.callbacks.XC_LayoutInflated;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
@@ -36,7 +38,24 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
         if (lpparam.packageName.equals("com.android.systemui")) {
+            XposedBridge.log("x5iitweaks: loaded app: " + lpparam.packageName);
 
+            prefs.reload();
+            int doubleTapOnAodToWake = Integer.parseInt(prefs.getString("double_tap_on_aod_to_wake", "-1"));
+
+            XposedBridge.log("doubleTapOnAodToWake: " + doubleTapOnAodToWake);
+
+            if (doubleTapOnAodToWake == 0) {
+                XposedHelpers.findAndHookMethod("com.android.systemui.statusbar.phone.StatusBar",
+                        lpparam.classLoader, "wakeUpIfDozing",
+                        long.class, View.class, String.class, new XC_MethodHook() {
+                            @Override
+                            protected void beforeHookedMethod(MethodHookParam mhparam) throws Throwable {
+                                XposedBridge.log("x5iitweaks: block wakeUpIfDozing preventing double click on AOD to wake!");
+                                mhparam.setResult(null);
+                            }
+                        });
+            }
         }
     }
 
@@ -50,6 +69,7 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
     @Override
     public void handleInitPackageResources(XC_InitPackageResources.InitPackageResourcesParam resparam) throws Throwable {
         if (resparam.packageName.equals("com.android.systemui")) {
+            XposedBridge.log("x5iitweaks: loaded app resource: " + resparam.packageName);
             prefs.reload();
             int volteMarginEnd = Integer.parseInt(prefs.getString("volte_margin_end_dp", "-1"));
             int volteWidthDp = Integer.parseInt(prefs.getString("volte_width_dp", "-1"));

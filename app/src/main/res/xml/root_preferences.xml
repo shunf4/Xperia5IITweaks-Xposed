@@ -47,4 +47,13 @@
         app:title="@string/input_nav_bar_layout_str_title"
         app:summary="@string/input_nav_bar_layout_str_description" />
 
+    <ListPreference
+        app:iconSpaceReserved="false"
+        app:defaultValue="-1"
+        app:entries="@array/on_off_not_changed"
+        app:entryValues="@array/on_off_not_changed_values"
+        app:key="double_tap_on_aod_to_wake"
+        app:title="@string/input_double_tap_on_aod_to_wake"
+        app:useSimpleSummaryProvider="true" />
+
 </PreferenceScreen>

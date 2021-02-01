@@ -7,4 +7,10 @@
         <item>包在长方形中的“VOLTE” (30.4dp x 24dp)</item>
         <item>包在正方形中的“VOLTE” (14dp x 14dp)</item>
     </string-array>
+
+    <string-array name="on_off_not_changed">
+        <item>关闭</item>
+        <item>打开</item>
+        <item>不改变</item>
+    </string-array>
 </resources>
