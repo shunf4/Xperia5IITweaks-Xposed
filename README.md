@@ -15,7 +15,24 @@ Various tweaks for Xperia 5 II as an Xposed module
 
 #### Before Use 使用前须知
 
-- Disable App List mode in EdXposed Manager to use this module. 请先在 EdXposed Manager 中禁用“应用名单”模式。
+- EdXposed 0.5.0+ no longer supports this module. EdXposed 0.5.0+ 不再支持此模块。  
+  I do not plan to fix this by myself. Though, adding compatibility should be very easy.
+  If you want to help, please refer to
+  https://github.com/GravityBox/GravityBox/issues/2089 ,
+  https://github.com/GravityBox/GravityBox/commit/c274d49f9453e9aef3b7b4871227d4ef98683eee ,
+  https://github.com/ElderDrivers/EdXposed/wiki/New-XSharedPreferences ,
+   and
+  https://github.com/ElderDrivers/EdXposed/commit/84822379184bfdcd830fff997265ac410e200e66#commitcomment-44827982 .
+
+  These links include how to use the new XSharedPreferences and how GravityBox's author did in
+  GravityBox to add compatibility. Contribution welcome, thanks.
+
+  我暂时不考虑自己添加对新版 EdXposed 的兼容，如果您有时间，可以考虑帮忙，应该很轻松就能做到。
+  上面的几个链接包括了 EdXposed 如何改动了 XSharedPreferences，以及在新版本中如何使用，以及 GravityBox 的作者
+  是怎么添加兼容性的（修改 Xposed 的 target 版本，再分别根据新版本和老版本做不同的操作获取配置值即可）。
+  欢迎您的贡献，谢谢。
+
+- ~Disable App List mode in EdXposed Manager to use this module. 请先在 EdXposed Manager 中禁用“应用名单”模式。~ Now this module works whether you turn App List mode on. 现在无论是否打开“应用名单”模式，模块都可以用了。
 - Modified setting values take effect after a reboot. 修改设置值后重启生效。
 
 #### License 授权协议

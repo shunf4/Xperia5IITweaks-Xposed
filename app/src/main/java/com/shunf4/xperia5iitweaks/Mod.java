@@ -40,7 +40,6 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
         if (lpparam.packageName.equals("com.android.systemui")) {
             XposedBridge.log("x5iitweaks: loaded app: " + lpparam.packageName);
 
-            prefs.reload();
             int doubleTapOnAodToWake = Integer.parseInt(prefs.getString("double_tap_on_aod_to_wake", "-1"));
 
             XposedBridge.log("doubleTapOnAodToWake: " + doubleTapOnAodToWake);
@@ -64,13 +63,18 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
         MODULE_PATH = startupParam.modulePath;
 
         prefs = new XSharedPreferences(prefsFile);
+        prefs.makeWorldReadable();
+        prefs.reload();
+
+        if (startupParam.startsSystemServer) {
+            XposedBridge.log("x5iitweaks: in initZygote, startupParam: " + startupParam.toString());
+        }
     }
 
     @Override
     public void handleInitPackageResources(XC_InitPackageResources.InitPackageResourcesParam resparam) throws Throwable {
         if (resparam.packageName.equals("com.android.systemui")) {
             XposedBridge.log("x5iitweaks: loaded app resource: " + resparam.packageName);
-            prefs.reload();
             int volteMarginEnd = Integer.parseInt(prefs.getString("volte_margin_end_dp", "-1"));
             int volteWidthDp = Integer.parseInt(prefs.getString("volte_width_dp", "-1"));
             int volteHeightDp = Integer.parseInt(prefs.getString("volte_height_dp", "-1"));
