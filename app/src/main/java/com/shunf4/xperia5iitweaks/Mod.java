@@ -32,8 +32,8 @@ class VolteSubstitutionIcons {
 
 public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXposedHookInitPackageResources {
     String MODULE_PATH = "";
+    public static final String PACKAGE_NAME = Mod.class.getPackage().getName();
     XSharedPreferences prefs = null;
-    static final File prefsFile = new File("/data/user_de/0/com.shunf4.xperia5iitweaks/shared_prefs/settings.xml");
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
@@ -62,9 +62,11 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
     public void initZygote(StartupParam startupParam) throws Throwable {
         MODULE_PATH = startupParam.modulePath;
 
-        prefs = new XSharedPreferences(prefsFile);
+        prefs = new XSharedPreferences(PACKAGE_NAME, "settings");
         prefs.makeWorldReadable();
         prefs.reload();
+
+        XposedBridge.log("x5iitweaks: preferences: " + prefs.getFile().getParent());
 
         if (startupParam.startsSystemServer) {
             XposedBridge.log("x5iitweaks: in initZygote, startupParam: " + startupParam.toString());

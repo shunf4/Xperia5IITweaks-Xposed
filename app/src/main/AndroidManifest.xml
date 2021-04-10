@@ -10,15 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Xperia5IITweaks">
 
-        <receiver
-            android:name=".BootCompletedPermissionFixer"
-            android:enabled="true"
-            android:exported="true"
-            android:directBootAware="true">
-            <intent-filter>
-                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+<!--        <receiver-->
+<!--            android:name=".BootCompletedPermissionFixer"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true"-->
+<!--            android:directBootAware="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
 
         <activity
             android:name=".SettingsActivity"
@@ -37,7 +37,13 @@
             android:value="Various tweaks to Xperia 5 II. " />
         <meta-data
             android:name="xposedminversion"
-            android:value="53" />
+            android:value="93" />
+        <meta-data
+            android:name="xposedsharedprefs"
+            android:value="true" />
+        <meta-data
+            android:name="xposedscope"
+            android:resource="@array/module_scope" />
     </application>
 
 </manifest>

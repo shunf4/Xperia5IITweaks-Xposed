@@ -3,7 +3,7 @@
         app:iconSpaceReserved="false"
         app:key="hint_text"
         app:icon="@drawable/ic_baseline_warning_24"
-        app:title="@string/hint_disable_app_list" />
+        app:title="@string/hint_top" />
 
     <EditTextPreference
         app:iconSpaceReserved="false"

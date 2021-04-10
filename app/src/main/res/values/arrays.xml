@@ -28,4 +28,8 @@
         <item>1</item>
         <item>-1</item>
     </string-array>
+    <string-array name="module_scope">
+        <item>android</item>
+        <item>com.android.systemui</item>
+    </string-array>
 </resources>

@@ -4,6 +4,10 @@ Various tweaks for Xperia 5 II as an Xposed module
 
 此 Xposed 模块可以对 Xperia 5 II 进行界面和功能的微调
 
+**Note: Only Xperia 5 II stock Android 10 is supported. Runs only on latest LSPosed.**
+
+**本应用只支持 Android 10 版本的 Xperia 5 II 官方系统，且只支持 LSPosed 的最新版本。**
+
 #### Features 功能
 
 - Adjust originally oversized VoLTE icon 调整原来过大的 VoLTE 图标
@@ -15,24 +19,8 @@ Various tweaks for Xperia 5 II as an Xposed module
 
 #### Before Use 使用前须知
 
-- EdXposed 0.5.0+ no longer supports this module. EdXposed 0.5.0+ 不再支持此模块。  
-  I do not plan to fix this by myself. Though, adding compatibility should be very easy.
-  If you want to help, please refer to
-  https://github.com/GravityBox/GravityBox/issues/2089 ,
-  https://github.com/GravityBox/GravityBox/commit/c274d49f9453e9aef3b7b4871227d4ef98683eee ,
-  https://github.com/ElderDrivers/EdXposed/wiki/New-XSharedPreferences ,
-   and
-  https://github.com/ElderDrivers/EdXposed/commit/84822379184bfdcd830fff997265ac410e200e66#commitcomment-44827982 .
-
-  These links include how to use the new XSharedPreferences and how GravityBox's author did in
-  GravityBox to add compatibility. Contribution welcome, thanks.
-
-  我暂时不考虑自己添加对新版 EdXposed 的兼容，如果您有时间，可以考虑帮忙，应该很轻松就能做到。  
-  上面的几个链接包括了 EdXposed 如何改动了 XSharedPreferences，以及在新版本中如何使用，以及 GravityBox 的作者  
-  是怎么添加兼容性的（修改 Xposed 的 target 版本，再分别根据新版本和老版本做不同的操作获取配置值即可）。  
-  欢迎您的贡献，谢谢。
-
-- ~Disable App List mode in EdXposed Manager to use this module. 请先在 EdXposed Manager 中禁用“应用名单”模式。~ Now this module works whether you turn App List mode on. 现在无论是否打开“应用名单”模式，模块都可以用了。
+- **Backup up settings and switch to LSPosed from EdXposed first before upgrading from 1.3 to 1.4 or above. 从 1.3 升级到 1.4 之前，请先备份本应用的设置，并从 EdXposed 切换到 LSPosed。**
+  Because this module has been updated to adapt to latest LSPosed only, and how EdXposed/LSPosed 93+ handles app preferences was updated. 因为本应用更新后只适配最新的 LSPosed，并且 Xposed API 93+ 后，处理应用偏好设置的机制被更新了。
 - Modified setting values take effect after a reboot. 修改设置值后重启生效。
 
 #### License 授权协议

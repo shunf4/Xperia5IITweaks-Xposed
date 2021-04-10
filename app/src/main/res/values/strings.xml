@@ -3,6 +3,7 @@
     <string name="title_activity_settings">X5II Tweaks Settings</string>
 
     <string name="hint_disable_app_list">Note: Disable App List mode in EdXposed Manager to use this module. Modified values take effect after a reboot.</string>
+    <string name="hint_top">Note: Only Android 10 Sony Xperia 5 II stock ROM is supported. Runs only on latest LSPosed.</string>
     <string name="input_volte_width_title">Width of VoLTE icon (dp, 0~100)</string>
     <string name="input_volte_width_description">Set as -2 to use original icon\'s width</string>
     <string name="input_volte_height_title">Height of VoLTE icon (dp, 0~50)</string>

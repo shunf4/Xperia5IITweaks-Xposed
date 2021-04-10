@@ -182,26 +182,28 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         void fixPremissionsAsync() {
-            AsyncTask.execute(() -> {
-                File pkgDirectory = getContext().createDeviceProtectedStorageContext()
-                        .getFilesDir().getParentFile();
-                if (pkgDirectory.exists()) {
-                    pkgDirectory.setExecutable(true, false);
-                    pkgDirectory.setReadable(true, false);
-                }
+            if (false) {
+                AsyncTask.execute(() -> {
+                    File pkgDirectory = getContext().createDeviceProtectedStorageContext()
+                            .getFilesDir().getParentFile();
+                    if (pkgDirectory.exists()) {
+                        pkgDirectory.setExecutable(true, false);
+                        pkgDirectory.setReadable(true, false);
+                    }
 
-                File sharedPrefsDir = new File(pkgDirectory.getAbsolutePath() + "/shared_prefs");
-                if (sharedPrefsDir.exists()) {
-                    pkgDirectory.setExecutable(true, false);
-                    sharedPrefsDir.setReadable(true, false);
-                }
+                    File sharedPrefsDir = new File(pkgDirectory.getAbsolutePath() + "/shared_prefs");
+                    if (sharedPrefsDir.exists()) {
+                        pkgDirectory.setExecutable(true, false);
+                        sharedPrefsDir.setReadable(true, false);
+                    }
 
-                File sharedPrefs = new File(sharedPrefsDir.getAbsolutePath() + "/settings.xml");
-                if (sharedPrefs.exists()) {
-                    sharedPrefs.setExecutable(true, false);
-                    sharedPrefs.setReadable(true, false);
-                }
-            });
+                    File sharedPrefs = new File(sharedPrefsDir.getAbsolutePath() + "/settings.xml");
+                    if (sharedPrefs.exists()) {
+                        sharedPrefs.setExecutable(true, false);
+                        sharedPrefs.setReadable(true, false);
+                    }
+                });
+            }
         }
     }
 }
