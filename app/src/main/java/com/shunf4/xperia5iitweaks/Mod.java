@@ -8,6 +8,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.io.File;
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import de.robv.android.xposed.IXposedHookInitPackageResources;
 import de.robv.android.xposed.IXposedHookLoadPackage;
@@ -34,6 +42,7 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
     String MODULE_PATH = "";
     public static final String PACKAGE_NAME = Mod.class.getPackage().getName();
     XSharedPreferences prefs = null;
+    Map<Object, List<?>> cachedReversedList = new HashMap<>();
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
@@ -52,6 +61,39 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
                             protected void beforeHookedMethod(MethodHookParam mhparam) throws Throwable {
                                 XposedBridge.log("x5iitweaks: block wakeUpIfDozing preventing double click on AOD to wake!");
                                 mhparam.setResult(null);
+                            }
+                        });
+            }
+        }
+
+        if (lpparam.packageName.equals("com.sonymobile.launcher")) {
+            XposedBridge.log("x5iitweaks: loaded app: " + lpparam.packageName);
+
+            int reverseLauncherAllAppOwnOrder = Integer.parseInt(prefs.getString("reverse_launcher_all_app_own_order", "-1"));
+
+            XposedBridge.log("reverseLauncherAllAppOwnOrder: " + reverseLauncherAllAppOwnOrder);
+
+            if (reverseLauncherAllAppOwnOrder == 1) {
+                XposedHelpers.findAndHookMethod("com.sonymobile.launcher.allapps.OwnOrderAppsList",
+                        lpparam.classLoader, "getAdapterItems",
+                        new XC_MethodHook() {
+                            @Override
+                            protected void afterHookedMethod(MethodHookParam mhparam) throws Throwable {
+                                mhparam.setResult(cachedReversedList.computeIfAbsent(mhparam.thisObject, k -> {
+                                    XposedBridge.log("x5iitweaks: reverse OwnOrderAppsList#getAdapterItems computing...");
+                                    List<?> listApps = (List<?>) mhparam.getResult();
+                                    return new AbstractList<Object>() {
+                                        @Override
+                                        public int size() {
+                                            return listApps.size();
+                                        }
+
+                                        @Override
+                                        public Object get(int i) {
+                                            return listApps.get(listApps.size() - i - 1);
+                                        }
+                                    };
+                                }));
                             }
                         });
             }

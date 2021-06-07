@@ -56,4 +56,19 @@
         app:title="@string/input_double_tap_on_aod_to_wake"
         app:useSimpleSummaryProvider="true" />
 
+    <Preference
+        app:iconSpaceReserved="false"
+        app:key="hint_text"
+        app:icon="@drawable/ic_baseline_warning_24"
+        app:title="@string/hint_dangerous_reverse_order" />
+
+    <ListPreference
+        app:iconSpaceReserved="false"
+        app:defaultValue="-1"
+        app:entries="@array/on_off_not_changed"
+        app:entryValues="@array/on_off_not_changed_values"
+        app:key="reverse_launcher_all_app_own_order"
+        app:title="@string/reverse_launcher_all_app_own_order"
+        app:useSimpleSummaryProvider="true" />
+
 </PreferenceScreen>

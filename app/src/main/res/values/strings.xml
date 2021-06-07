@@ -3,7 +3,7 @@
     <string name="title_activity_settings">X5II Tweaks Settings</string>
 
     <string name="hint_disable_app_list">Note: Disable App List mode in EdXposed Manager to use this module. Modified values take effect after a reboot.</string>
-    <string name="hint_top">Note: Only Android 10 Sony Xperia 5 II stock ROM is supported. Runs only on latest LSPosed.</string>
+    <string name="hint_top">Note: Only Android 11 Sony Xperia 5 II stock ROM is supported. Runs only on latest LSPosed.</string>
     <string name="input_volte_width_title">Width of VoLTE icon (dp, 0~100)</string>
     <string name="input_volte_width_description">Set as -2 to use original icon\'s width</string>
     <string name="input_volte_height_title">Height of VoLTE icon (dp, 0~50)</string>
@@ -16,5 +16,7 @@
     <string name="input_nav_bar_layout_str_title">Navigation bar layout string</string>
     <string name="input_nav_bar_layout_str_description">Empty (or string with only whitespace characters) means no modification</string>
     <string name="input_double_tap_on_aod_to_wake">Double tap on Always On Display (Ambient Display) to wake</string>
+    <string name="reverse_launcher_all_app_own_order">Reverse Own Order of \"All Apps\" in Launcher</string>
+    <string name="hint_dangerous_reverse_order">Note: if you enabled \"Reverse Own Order of \'All Apps\' in Launcher\", do not adjust order of the apps !</string>
 
 </resources>

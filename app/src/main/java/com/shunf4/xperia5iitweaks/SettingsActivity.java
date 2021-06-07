@@ -1,5 +1,6 @@
 package com.shunf4.xperia5iitweaks;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -46,7 +47,8 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             getPreferenceManager().setSharedPreferencesName("settings");
-            getPreferenceManager().setStorageDeviceProtected();
+            getPreferenceManager().setSharedPreferencesMode(Context.MODE_WORLD_READABLE);
+            // getPreferenceManager().setStorageDeviceProtected();
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
         }
 
@@ -160,6 +162,25 @@ public class SettingsActivity extends AppCompatActivity {
             iconPreference.callChangeListener(iconPreference.getValue());
 
             getPreferenceManager().findPreference("double_tap_on_aod_to_wake")
+                    .setOnPreferenceChangeListener((preference, newValue) -> {
+                        String strNewValue = (String) newValue;
+                        try {
+                            int i = Integer.parseInt(strNewValue);
+                            if (i < -1 || i > 1) {
+                                throw new Exception();
+                            }
+                        } catch (Exception e) {
+                            Toast.makeText(
+                                    getContext(),
+                                    R.string.hint_not_in_range,
+                                    Toast.LENGTH_LONG
+                            ).show();
+                            return false;
+                        }
+                        return true;
+                    });
+
+            getPreferenceManager().findPreference("reverse_launcher_all_app_own_order")
                     .setOnPreferenceChangeListener((preference, newValue) -> {
                         String strNewValue = (String) newValue;
                         try {
