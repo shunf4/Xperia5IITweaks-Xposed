@@ -22,8 +22,9 @@ Various tweaks for Xperia 5 II as an Xposed module
 
 - **Backup up settings and switch to LSPosed from EdXposed first before upgrading from 1.3 to 1.4 or above. 从 1.3 升级到 1.4 之前，请先备份本应用的设置，并从 EdXposed 切换到 LSPosed。**
   Because this module has been updated to adapt to latest LSPosed only, and how EdXposed/LSPosed 93+ handles app preferences was updated. 因为本应用更新后只适配最新的 LSPosed，并且 Xposed API 93+ 后，处理应用偏好设置的机制被更新了。
+- You must enable "Resource hooks" in LSPosed to make UI-related tweaks work. 要使与 UI 有关的微调生效，你必须在 LSPosed 中启用**资源钩子**。
 - Modified setting values take effect after a reboot. 修改设置值后重启生效。
-- **After upgrading this module, you might need to re-apply all preferences by changing any preference item, or this module will not take effect after a reboot. 升级此模块后，需要重新设置任意一个配置项以使所有配置重新生效，否则重启后本模块将不起作用。**
+
 
 #### License 授权协议
 
