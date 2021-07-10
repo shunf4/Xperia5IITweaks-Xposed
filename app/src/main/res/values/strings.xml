@@ -18,5 +18,7 @@
     <string name="input_double_tap_on_aod_to_wake">Double tap on Always On Display (Ambient Display) to wake</string>
     <string name="reverse_launcher_all_app_own_order">Reverse Own Order of \"All Apps\" in Launcher</string>
     <string name="hint_dangerous_reverse_order">Note: if you enabled \"Reverse Own Order of \'All Apps\' in Launcher\", do not adjust order of the apps !</string>
+    <string name="input_qs_rows_title">Rows of QS Panel</string>
+    <string name="input_qs_rows_description">Set as \"the Rows you expected + 1\"</string>
 
 </resources>

@@ -1,30 +1,31 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <Preference
+        app:icon="@drawable/ic_baseline_warning_24"
         app:iconSpaceReserved="false"
         app:key="hint_text"
-        app:icon="@drawable/ic_baseline_warning_24"
         app:title="@string/hint_top" />
 
     <EditTextPreference
-        app:iconSpaceReserved="false"
         app:defaultValue="-1"
+        app:iconSpaceReserved="false"
         app:key="volte_width_dp"
-        app:title="@string/input_volte_width_title"
-        app:summary="@string/input_volte_width_description" />
+        app:summary="@string/input_volte_width_description"
+        app:title="@string/input_volte_width_title" />
 
     <EditTextPreference
-        app:iconSpaceReserved="false"
         app:defaultValue="-1"
+        app:iconSpaceReserved="false"
         app:key="volte_height_dp"
-        app:title="@string/input_volte_height_title"
-        app:summary="@string/input_volte_height_description" />
+        app:summary="@string/input_volte_height_description"
+        app:title="@string/input_volte_height_title" />
 
     <EditTextPreference
-        app:iconSpaceReserved="false"
         app:defaultValue="-1"
+        app:iconSpaceReserved="false"
         app:key="volte_margin_end_dp"
-        app:title="@string/input_volte_margin_end_title"
-        app:summary="@string/input_volte_margin_end_description" />
+        app:summary="@string/input_volte_margin_end_description"
+        app:title="@string/input_volte_margin_end_title" />
 
     <ListPreference
         app:defaultValue="-1"
@@ -35,40 +36,48 @@
         app:useSimpleSummaryProvider="true" />
 
     <Preference
+        app:icon="@drawable/ic_baseline_warning_24"
         app:iconSpaceReserved="false"
         app:key="hint_text"
-        app:icon="@drawable/ic_baseline_warning_24"
         app:title="@string/hint_dangerous_nav_bar_tweak" />
 
     <EditTextPreference
-        app:iconSpaceReserved="false"
         app:defaultValue=""
+        app:iconSpaceReserved="false"
         app:key="nav_bar_layout_str"
-        app:title="@string/input_nav_bar_layout_str_title"
-        app:summary="@string/input_nav_bar_layout_str_description" />
+        app:summary="@string/input_nav_bar_layout_str_description"
+        app:title="@string/input_nav_bar_layout_str_title" />
 
     <ListPreference
-        app:iconSpaceReserved="false"
         app:defaultValue="-1"
         app:entries="@array/on_off_not_changed"
         app:entryValues="@array/on_off_not_changed_values"
+        app:iconSpaceReserved="false"
         app:key="double_tap_on_aod_to_wake"
         app:title="@string/input_double_tap_on_aod_to_wake"
         app:useSimpleSummaryProvider="true" />
 
     <Preference
+        app:icon="@drawable/ic_baseline_warning_24"
         app:iconSpaceReserved="false"
         app:key="hint_text"
-        app:icon="@drawable/ic_baseline_warning_24"
         app:title="@string/hint_dangerous_reverse_order" />
 
     <ListPreference
-        app:iconSpaceReserved="false"
         app:defaultValue="-1"
         app:entries="@array/on_off_not_changed"
         app:entryValues="@array/on_off_not_changed_values"
+        app:iconSpaceReserved="false"
         app:key="reverse_launcher_all_app_own_order"
         app:title="@string/reverse_launcher_all_app_own_order"
         app:useSimpleSummaryProvider="true" />
+
+    <EditTextPreference
+        android:defaultValue="3"
+        android:key="qs_max_rows"
+        android:summary="@string/input_qs_rows_description"
+        android:title="@string/input_qs_rows_title"
+        app:iconSpaceReserved="false" />
+
 
 </PreferenceScreen>
