@@ -128,6 +128,8 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
                     prefs.getString("nav_bar_layout_str", "");
             navBarLayout = navBarLayout.replaceAll("\\s", "");
 
+            int qsMaxRows = Integer.parseInt(prefs.getString("qs_max_rows", "3"));
+
             XposedBridge.log("volteMarginEnd: " + volteMarginEnd);
             XposedBridge.log("volteWidthDp: " + volteWidthDp);
             XposedBridge.log("volteHeightDp: " + volteHeightDp);
@@ -153,7 +155,7 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
             }
 
             if ((volteWidthDp >= 0 && volteWidthDp <= 100 || volteWidthDp == -2)
-                && (volteHeightDp >= 0 && volteHeightDp <= 50 || volteHeightDp == -2)) {
+                    && (volteHeightDp >= 0 && volteHeightDp <= 50 || volteHeightDp == -2)) {
                 resparam.res.hookLayout(
                         "com.android.systemui",
                         "layout",
@@ -188,12 +190,12 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
                     && volteSubstitutionIconIndex < VolteSubstitutionIcons.RESOURCES.length) {
                 XModuleResources modRes = XModuleResources.createInstance(MODULE_PATH, resparam.res);
                 resparam.res.setReplacement(
-                    "com.android.systemui",
-                    "drawable",
-                    "stat_sys_volte",
-                    modRes.fwd(
-                            VolteSubstitutionIcons.RESOURCES[volteSubstitutionIconIndex]
-                    ));
+                        "com.android.systemui",
+                        "drawable",
+                        "stat_sys_volte",
+                        modRes.fwd(
+                                VolteSubstitutionIcons.RESOURCES[volteSubstitutionIconIndex]
+                        ));
             }
 
             if (!navBarLayout.equals("")) {
@@ -203,6 +205,18 @@ public class Mod implements IXposedHookLoadPackage, IXposedHookZygoteInit, IXpos
                         "config_navBarLayout",
                         navBarLayout);
             }
+
+            if (qsMaxRows > 1) {
+                XposedBridge.log("qsMaxRows: " + qsMaxRows);
+                resparam.res.setReplacement(
+                        "com.android.systemui",
+                        "integer",
+                        "quick_settings_max_rows",
+                        qsMaxRows
+                );
+            }
+
+
         }
     }
 }
