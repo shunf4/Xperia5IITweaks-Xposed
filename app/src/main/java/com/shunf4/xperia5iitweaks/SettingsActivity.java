@@ -199,6 +199,25 @@ public class SettingsActivity extends AppCompatActivity {
                         return true;
                     });
 
+            getPreferenceManager().findPreference("qs_max_rows")
+                    .setOnPreferenceChangeListener((preference, newValue) -> {
+                        String strNewValue = (String) newValue;
+                        try {
+                            int i = Integer.parseInt(strNewValue);
+                            if (i < 2 || i > 6) {
+                                throw new Exception();
+                            }
+                        } catch (Exception e) {
+                            Toast.makeText(
+                                    getContext(),
+                                    R.string.hint_not_in_range,
+                                    Toast.LENGTH_LONG
+                            ).show();
+                            return false;
+                        }
+                        return true;
+                    });
+
             return super.onCreateView(inflater, container, savedInstanceState);
         }
 
